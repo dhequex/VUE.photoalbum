@@ -2,9 +2,6 @@
   <div id="app">
     <div>
    </div>
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <h1>{{ title }}</h1>
-    <h2>{{currentView}}</h2>
     <navbar :title="title" @toAllPhotos="title = AllPhotos"></navbar>
     <allphotos :photos="photos" v-if="currentview === AllPhotos"></allphotos>
     <singlephoto :photos="photos"  v-else></singlephoto>

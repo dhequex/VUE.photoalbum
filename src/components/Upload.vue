@@ -1,7 +1,7 @@
 <template>
   <div>
-    <input @change="uploadFile" type="file"/>
-    <button>UPLOAD</button>
+    <input ref="fileInput" @change="uploadFile" type="file"/>
+    <button @click="clickInput()"  >UPLOAD</button>
   </div>
 </template> 
 
@@ -11,8 +11,10 @@ export default {
   name: "Upload",
   methods: {
    uploadFile(event) {
-     console.log("hi");
      saveObject(event.target.files[0])
+    },
+   clickInput() {
+      console.log("it workes")
     }
   }
 };

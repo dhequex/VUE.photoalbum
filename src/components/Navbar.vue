@@ -1,6 +1,6 @@
 <template>
   <div class="NavBar">
-    <h1>This is the navbar</h1>
+    <h1>HOME</h1>
     <button @click="toAllPhotos()">Show All Photos</button>
     <upload/>
   </div>
