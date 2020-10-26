@@ -5,9 +5,9 @@
     <img alt="Vue logo" src="./assets/logo.png" />
     <h1>{{ title }}</h1>
     <h2>{{currentView}}</h2>
-    <navbar :title="title"></navbar>
+    <navbar :title="title" @toAllPhotos="title = AllPhotos"></navbar>
     <allphotos :photos="photos" v-if="currentview === AllPhotos"></allphotos>
-    <singlephoto v-else></singlephoto>
+    <singlephoto :photos="photos"  v-else></singlephoto>
   
   </div>
 </template>
@@ -18,7 +18,7 @@
 import Navbar from "./components/Navbar";
 import AllPhotos from "./components/AllPhotos";
 import SinglePhoto from "./components/SinglePhoto";
-import { listObjects, saveObject,getSingleObject }  from "../utils/"
+import { listObjects, saveObject,getSingleObject }  from "../utils"
 
 
 export default {
@@ -38,10 +38,8 @@ export default {
     console.log("created called");
     let photoArr = await listObjects();
     photoArr= photoArr.map(x=>x.Key)
-                      .filter(x=> )
-    this.photos=photoArr;
-    console.log(photoArr);
-  
+                      .filter(x=> !x.includes(".mov") && !x.includes(".HEIC"))
+    this.photos=photoArr;  
   }
 }
 
