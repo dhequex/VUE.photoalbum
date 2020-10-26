@@ -40,7 +40,7 @@ export default {
     photoArr= photoArr.map(x=>x.Key)
     this.photos=photoArr;
     console.log(photoArr);
-   // src={`https://s3-ap-northeast-1.amazonaws.com/react.sprint/${s3Obj.Key}`}
+  
   }
 }
 
