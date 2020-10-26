@@ -38,6 +38,7 @@ export default {
     console.log("created called");
     let photoArr = await listObjects();
     photoArr= photoArr.map(x=>x.Key)
+                      .filter(x=> )
     this.photos=photoArr;
     console.log(photoArr);
   
