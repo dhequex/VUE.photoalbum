@@ -2,7 +2,7 @@
   <div id="app">
     <div>
    </div>
-    <navbar :title="title" @toAllPhotos="title = AllPhotos"></navbar>
+    <navbar :currentView="currentView"  @toAllPhotos="currentView = AllPhotos"></navbar>
     <allphotos :photos="photos" v-if="currentview === AllPhotos"></allphotos>
     <singlephoto :photos="photos"  v-else></singlephoto>
   
@@ -15,7 +15,7 @@
 import Navbar from "./components/Navbar";
 import AllPhotos from "./components/AllPhotos";
 import SinglePhoto from "./components/SinglePhoto";
-import { listObjects, saveObject,getSingleObject }  from "../utils"
+import { listObjects, saveObject }  from "../utils"
 
 
 export default {
@@ -42,3 +42,10 @@ export default {
 
 </script>
 
+<style>
+.NavBar{
+  background-color: #42B6A4;
+  width: 100%;
+  height: 300px;
+}
+</style>

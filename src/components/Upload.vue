@@ -1,12 +1,12 @@
 <template>
   <div>
-    <input ref="fileInput" @change="uploadFile" type="file"/>
+    <input class="input" ref="fileInput" @change="uploadFile" type="file"/>
     <button @click="clickInput()"  >UPLOAD</button>
   </div>
 </template> 
 
 <script>
-import { listObjects, saveObject,getSingleObject }  from "../../utils/index.js"
+import { saveObject }  from "../../utils/index.js"
 export default {
   name: "Upload",
   methods: {
@@ -15,9 +15,14 @@ export default {
     },
    clickInput() {
       console.log("it workes")
+      this.$refs.fileInput.click();
     }
   }
 };
 </script>
 
-<style></style>
+<style>
+.input{
+  display:none
+}
+</style>

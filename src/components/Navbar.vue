@@ -9,7 +9,6 @@
 <script>
 import Upload from "./Upload";
 
-
 export default {
   name: "Navbar",
   components: {
@@ -30,11 +29,5 @@ export default {
 </script>
 
 <style>
-.NavBar{
-  background-color: rgb(8, 228, 173);
-  width: 100%;
-  height: 300px;
-}
-
 
 </style>
