@@ -6,35 +6,43 @@
     <h1>{{ title }}</h1>
     <h2>{{currentView}}</h2>
     <navbar :title="title"></navbar>
+    <allphotos :photos="photos" v-if="currentview === AllPhotos"></allphotos>
+    <singlephoto v-else></singlephoto>
+  
   </div>
 </template>
+
+
 
 <script>
 import Navbar from "./components/Navbar";
 import AllPhotos from "./components/AllPhotos";
 import SinglePhoto from "./components/SinglePhoto";
-
+import { listObjects, saveObject,getSingleObject }  from "../utils/"
 
 
 export default {
   name: "App",
   components: {
     navbar: Navbar,
-    AllPhotos: AllPhotos,
-    SinglePhoto: SinglePhoto
+    allphotos: AllPhotos,
+    singlephoto: SinglePhoto
   },
-  
   data: () => ({
-    title: "Photo Upload App",
-    currentView: "All Photos", 
+    title: "CC Photo Library",
+    currentView: "AllPhotos", 
     selectedPhotos: "selected",
-    photos: [ 1, 2, 3],
-  })
-};
+    photos: [],
+  }),
+  created: async function () {
+    console.log("created called");
+    let photoArr = await listObjects();
+    photoArr= photoArr.map(x=>x.Key)
+    this.photos=photoArr;
+    console.log(photoArr);
+   // src={`https://s3-ap-northeast-1.amazonaws.com/react.sprint/${s3Obj.Key}`}
+  }
+}
+
 </script>
 
-<style>
-#app {
-  text-align: center;
-}
-</style>
