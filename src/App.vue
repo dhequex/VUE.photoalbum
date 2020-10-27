@@ -41,14 +41,14 @@ export default {
   }),
   methods: {
     toAllPhotos(value) {
-      this.currentView = true;
-      console.log("current",this.currentView)
+      this.isAllphotos = true;
+      console.log("isAllphotos",this.currentView)
     },
     toSinglePhoto(key) {
       this.isAllphotos = false;
       this.selectedPhotos = key;
-      console.log("current",this.currentView)   
-      console.log("key",key)  
+      console.log("isAllphotos",this.currentView)   
+      console.log("key",key)  ;
     }
   },
   created: async function () {

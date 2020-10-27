@@ -1,8 +1,7 @@
 <template>
   <div class="NavBar">
-    <h1>HOME</h1>
+    <h1>Vueing the Photos by Jose and Kenny</h1>
     <button @click="toAllPhotos()">Show All Photos</button>
-    
     <upload/>
   </div>
 </template>
