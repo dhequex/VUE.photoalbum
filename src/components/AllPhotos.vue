@@ -34,6 +34,10 @@ export default {
   height: 300px;
 }
 
+.AllPhotos:hover {
+  zoom:150%;
+}
+
 
 
 </style>

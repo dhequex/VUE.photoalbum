@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <navbar :currentView="currentView"  @buttonClicked="toAllPhotos"></navbar>
-    <img src="https://flevix.com/wp-content/uploads/2019/07/Bar-Preloader-1.gif" v-if="photos.length===0"/>
+    <img class="loading" src="https://flevix.com/wp-content/uploads/2019/07/Bar-Preloader-1.gif" v-if="photos.length===0"/>
     <allphotos 
     v-if="isAllphotos"
     :photos="photos" 
@@ -62,14 +62,14 @@ export default {
 </script>
 
 <style>
-.NavBar{
-  background-color: #42B6A4;
-  width: 100%;
-  height: 300px;
-}
+
 
 #app{
   width:100vw;
   height:80vh;
+}
+
+.loading{
+  margin-left:30%
 }
 </style>

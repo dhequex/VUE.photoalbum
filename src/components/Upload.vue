@@ -1,7 +1,7 @@
 <template>
   <div>
     <input class="input" ref="fileInput" @change="uploadFile" type="file"/>
-    <button @click="clickInput()"  >UPLOAD</button>
+    <button class="uploadButton" @click="clickInput()"  >UPLOAD</button>
   </div>
 </template> 
 

@@ -18,8 +18,12 @@ export default {
 
 <style>
 .SinglePhoto{
-  max-height:1000px;
-  width:auto
+  max-height:600px;
+  width:auto;
+  position: absolute;
+  top: 40%;
+  left: 37%;
 }
+
 
 </style>
