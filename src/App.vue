@@ -2,9 +2,17 @@
   <div id="app">
     <div>
    </div>
-    <navbar :currentView="currentView"  @toAllPhotos="currentView = AllPhotos"></navbar>
-    <allphotos :photos="photos" v-if="currentview === AllPhotos"></allphotos>
-    <singlephoto :photos="photos"  v-else></singlephoto>
+    <navbar :currentView="currentView"  @buttonClicked="toAllPhotos"></navbar>
+    <allphotos 
+    v-if="isAllphotos"
+    :photos="photos" 
+    :isAllphotos="isAllphotos" 
+    :selectedPhotos="selectedPhotos" 
+    @toSinglePhoto="toSinglePhoto"
+    ></allphotos>
+    <singlephoto v-else 
+    :photos="photos"
+    :selectedPhotos="selectedPhotos" ></singlephoto>
   
   </div>
 </template>
@@ -27,10 +35,22 @@ export default {
   },
   data: () => ({
     title: "CC Photo Library",
-    currentView: "AllPhotos", 
-    selectedPhotos: "selected",
+    isAllphotos: true, 
+    selectedPhotos: "",
     photos: [],
   }),
+  methods: {
+    toAllPhotos(value) {
+      this.currentView = true;
+      console.log("current",this.currentView)
+    },
+    toSinglePhoto(key) {
+      this.isAllphotos = false;
+      this.selectedPhotos = key;
+      console.log("current",this.currentView)   
+      console.log("key",key)  
+    }
+  },
   created: async function () {
     console.log("created called");
     let photoArr = await listObjects();

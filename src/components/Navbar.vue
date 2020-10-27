@@ -2,6 +2,7 @@
   <div class="NavBar">
     <h1>HOME</h1>
     <button @click="toAllPhotos()">Show All Photos</button>
+    
     <upload/>
   </div>
 </template>
@@ -16,13 +17,13 @@ export default {
   },
   props: {
     title: String,
-    currentView: String,
+    isAllphotos: Boolean,
     selectedPhotos: String,
     photos: Array 
     },
   methods: {
     toAllPhotos() {
-      this.$emit('toAllPhotos')
+      this.$emit('buttonClicked')
     }
   }
 } 
