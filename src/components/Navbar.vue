@@ -1,6 +1,7 @@
 <template>
   <div class="NavBar">
-    <h1>Vueing the Photos by Jose and Kenny</h1>
+    <h1 class="Topic">Vueing the Photos by Jose and Kenny</h1>
+    <img class="logo" src="https://pbs.twimg.com/profile_images/1281073106711310337/lJkvgoyy_400x400.png" />
     <button @click="toAllPhotos()">Show All Photos</button>
     <upload/>
   </div>
@@ -30,4 +31,14 @@ export default {
 
 <style>
 
+.logo{
+  max-height:100px;
+  margin-bottom:auto;
+  margin-left: auto;
+}
+.Topic {
+  font-size:60px;
+  text-align: center;
+  margin-top:10px;
+}
 </style>

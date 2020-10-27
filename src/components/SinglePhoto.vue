@@ -1,5 +1,5 @@
 <template>
-  <div> 
+  <div class="singleDiv"> 
       <img
           class="SinglePhoto" 
           :src="'https://s3-ap-northeast-1.amazonaws.com/react.sprint/' + selectedPhotos" />
@@ -19,7 +19,7 @@ export default {
 <style>
 .SinglePhoto{
   max-height:1000px;
-  width:auto;
+  width:auto
 }
 
 </style>
